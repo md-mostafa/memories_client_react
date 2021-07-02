@@ -1,3 +1,4 @@
+import * as actionType from '../constants/actionTypes';
 import { AUTH, LOGOUT } from '../constants/actionTypes';
 
 
