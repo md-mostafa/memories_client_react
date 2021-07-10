@@ -14,7 +14,7 @@ export const getPosts = () => async (dispatch) => {         //this is redux thun
 
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {   //this is redux thunk
   try {
-    const { data } => await api.fetchPostsBySearch(searchQuery);
+    const { data: { data } } = await api.fetchPostsBySearch(searchQuery);
 
     console.log(data);
   }catch(error) {
