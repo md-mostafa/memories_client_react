@@ -10,12 +10,16 @@ export const getPosts = () => async (dispatch) => {         //this is redux thun
   } catch (error) {
     console.log(error);
   }
+};
 
-  
-    //const action = { type:  'FETCH_ALL', payload: [] }
+export const getPostsBySearch = (searchQuery) => async (dispatch) => {   //this is redux thunk
+  try {
+    const { data } => await api.fetchPostsBySearch(searchQuery);
 
-    //return action;
-    //dispatch(action);
+    console.log(data);
+  }catch(error) {
+    console.log(error);
+  }
 };
 
 export const createPost = (post) => async (dispatch) => {
