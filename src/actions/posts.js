@@ -2,9 +2,11 @@ import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE, FETCH_BY_SEARCH } from '../con
 import * as api from '../api/index.js';
 
 //action creators is a function that returns action
-export const getPosts = () => async (dispatch) => {         //this is redux thunk
+export const getPosts = (page) => async (dispatch) => {         //this is redux thunk
   try {
-    const { data } = await api.fetchPosts();
+    const { data } = await api.fetchPosts(page);
+
+    console.log(data);
 
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {
